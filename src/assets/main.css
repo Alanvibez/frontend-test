@@ -1,1 +1,5 @@
-@import './base.css';
+@import "./base.css";
+.error {
+  color: #f44336;
+  font-size: 12px;
+}
