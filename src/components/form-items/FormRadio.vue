@@ -7,9 +7,9 @@
         required
         type="radio"
         :name="name"
-        :id="option.value"
         :value="option.value"
         :checked="option.selected"
+        @input="$emit('update:modelValue', $event.target.value)"
       />
       <label :for="option.value">{{ option.text }}</label>
     </div>
@@ -23,17 +23,17 @@ export default {
   props: {
     label: {
       type: String,
-      default: ""
+      default: "",
     },
     name: {
       type: String,
-      default: ""
+      default: "",
     },
     options: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

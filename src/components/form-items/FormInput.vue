@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>{{ label }}</p>
-    <input v-bind="$attrs" :type="type" />
+    <input v-bind="$attrs" :type="type" @input="$emit('update:modelValue', $event.target.value)"/>
     <p v-if="error" class="error">{{ error }}</p>
   </div>
 </template>
@@ -9,21 +9,20 @@
 <script>
 export default {
   name: "FormInput",
-
   props: {
     label: {
       type: String,
-      default: ""
+      default: "",
     },
     type: {
       type: String,
-      default: "text"
+      default: "text",
     },
     error: {
       type: String,
-      default: ""
+      default: "",
     }
-  }
+  },
 };
 </script>
 

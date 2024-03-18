@@ -1,7 +1,10 @@
 <template>
   <div>
     <p>{{ label }}</p>
-    <select v-bind="$attrs">
+    <select
+      v-bind="$attrs"
+      @input="$emit('update:modelValue', $event.target.value)"
+    >
       <option
         v-for="option in options"
         :key="option.value"
@@ -20,14 +23,14 @@ export default {
   props: {
     label: {
       type: String,
-      default: ""
+      default: "",
     },
 
     options: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

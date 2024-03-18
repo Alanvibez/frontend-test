@@ -1,6 +1,6 @@
 <template>
   <main>
-    <FormBuilder :config="formConfig.parent.items" />
+    <FormBuilder :config="formConfig" />
   </main>
 </template>
 
